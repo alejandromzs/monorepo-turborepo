@@ -1,6 +1,7 @@
 import Image, { type ImageProps } from "next/image";
 import { Button } from "@repo/ui/button";
 import styles from "./page.module.css";
+import { WEB_URL } from "../../../config";
 
 type Props = Omit<ImageProps, "src"> & {
   srcLight: string;
@@ -38,6 +39,14 @@ export default function Home() {
           <li>Save and see your changes instantly.</li>
         </ol>
 
+          <a
+            href={WEB_URL}
+            //target="_blank"
+            rel="noopener noreferrer"
+            className={styles.secondary}
+          >
+            Go to Web App
+          </a>
         <div className={styles.ctas}>
           <a
             className={styles.primary}

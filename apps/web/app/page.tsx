@@ -1,6 +1,7 @@
 import Image, { type ImageProps } from "next/image";
 import { Button } from "@repo/ui/button";
 import styles from "./page.module.css";
+import { DOCS_URL } from "../../../config";
 
 type Props = Omit<ImageProps, "src"> & {
   srcLight: string;
@@ -37,6 +38,14 @@ export default function Home() {
           </li>
           <li>Save and see your changes instantly.</li>
         </ol>
+         <a
+             href={DOCS_URL}
+             //target="_blank"
+             rel="noopener noreferrer"
+             className={styles.secondary}
+           >
+             Go to doc App
+           </a>
 
         <div className={styles.ctas}>
           <a
