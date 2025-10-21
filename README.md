@@ -140,3 +140,10 @@ Learn more about the power of Turborepo:
 * Go to the config.ts of the top project and add the new line for the port and prod url (Used only when navigation from one subproject to another)
 * turbo build
 * turbo dev
+* In vercel:
+  * Create a new project
+  * For root directory: apps/dashboard
+  * For Build and Output Settings:
+    * Build command: pnpm build
+    * Output Directory: .next
+    * Install Command: pnpm install --frozen-lockfile
