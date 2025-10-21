@@ -1,4 +1,20 @@
 import Image from "next/image";
+import { DOCS_URL, WEB_URL } from "../../../../config";
+
+const projectLinks = [
+  {
+    id: 1,
+    description: "this is a doc basic project",
+    name: "doc",
+    href: DOCS_URL,
+  },
+  {
+    id: 2,
+    description: "this is a web basic project",
+    name: "web",
+    href: WEB_URL,
+  },
+];
 
 export default function Home() {
   return (
@@ -23,24 +39,22 @@ export default function Home() {
               </tr>
             </thead>
             <tbody>
-              <tr className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  1
-                </th>
-                <td className="px-6 py-4">this is a doc basic project</td>
-                <td className="px-6 py-4">
-                  <a href="http://localhost:3001" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">http://localhost:3001</a>
-                </td>
-              </tr>
-              <tr className="bg-white dark:bg-gray-800 hover:bg-gray-50 dark:hover:bg-gray-600">
-                <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
-                  2
-                </th>
-                <td className="px-6 py-4">this is a web basic project</td>
-                <td className="px-6 py-4">
-                  <a href="http://localhost:3000" className="font-medium text-blue-600 dark:text-blue-500 hover:underline">http://localhost:3000</a>
-                </td>
-              </tr>
+              {projectLinks.map((link, index) => (
+                <tr
+                  key={link.id}
+                  className="bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600"
+                >
+                  <th scope="row" className="px-6 py-4 font-medium text-gray-900 whitespace-nowrap dark:text-white">
+                    {link.id}
+                  </th>
+                  <td className="px-6 py-4">{link.description}</td>
+                  <td className="px-6 py-4">
+                    <a href={link.href} className="font-medium text-blue-600 dark:text-blue-500 hover:underline">
+                      {link.name}
+                    </a>
+                  </td>
+                </tr>
+              ))}
             </tbody>
           </table>
         </div>
