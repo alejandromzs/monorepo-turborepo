@@ -1,8 +1,7 @@
-# Turborepo starter
+# Turborepo amzs project
+This project cointains different subprojects created by amzs
 
-This Turborepo starter is maintained by the Turborepo core team.
-
-## Using this example
+## Using this project
 
 Run the following command:
 
@@ -16,8 +15,8 @@ This Turborepo includes the following packages/apps:
 
 ### Apps and Packages
 
-- `docs`: a [Next.js](https://nextjs.org/) app
-- `web`: another [Next.js](https://nextjs.org/) app
+- `docs`: a [Next.js](https://nextjs.org/) basic app
+- `web`: another [Next.js](https://nextjs.org/) basic app
 - `@repo/ui`: a stub React component library shared by both `web` and `docs` applications
 - `@repo/eslint-config`: `eslint` configurations (includes `eslint-config-next` and `eslint-config-prettier`)
 - `@repo/typescript-config`: `tsconfig.json`s used throughout the monorepo
@@ -133,3 +132,11 @@ Learn more about the power of Turborepo:
 - [Filtering](https://turborepo.com/docs/crafting-your-repository/running-tasks#using-filters)
 - [Configuration Options](https://turborepo.com/docs/reference/configuration)
 - [CLI Usage](https://turborepo.com/docs/reference/command-line-reference)
+
+
+## New subproject creation
+* Run command `pnpm create next-app apps/dashboard --typescript --eslint`
+* Go to package.json of the new subproject and add to the dev script: ` --port 300X`
+* Go to the config.ts of the top project and add the new line for the port and prod url (Used only when navigation from one subproject to another)
+* turbo build
+* turbo dev
